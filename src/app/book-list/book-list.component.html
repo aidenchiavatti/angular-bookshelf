@@ -1,11 +1,13 @@
 <div class="container" id="results">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3 result">
-            <div class="card">
-                <div class="resultTitle"><span>Title</span></div>
-                <div class="resultBadge"><span class="badge badge-primary">Computers</span></div>
-                <div><img src="assets/img/children_bookcover.png" width="150px">
-                    <div class="resultAuthor"><span>By (insert author)</span></div>
+        <div *ngFor="let book of bookService.books" class="col-sm-6 col-md-4 col-lg-3 result">
+            <div class="card" routerLink="/book/{{ book.id }}">
+                <div class="resultTitle"><span>{{ book.title}}</span></div>
+                <div class="resultBadge">
+                    <span *ngFor="let category of book.categories" class="badge badge-primary">{{ category }}</span>
+                </div>
+                <div><img [src]="book.smallThumbnail" width="150px">
+                    <div class="resultAuthor"><span>By: </span><span *ngFor="let author of book.authors">{{ author }}</span></div>
                 </div>
             </div>
         </div>

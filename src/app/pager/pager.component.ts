@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleBooksService } from '../shared/google-books.service';
 
 @Component({
   selector: 'app-pager',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookService: GoogleBooksService) { }
 
   ngOnInit() {
+  }
+
+  nextPage() {
+    this.bookService.page++;
+  }
+
+  prevPage() {
+    this.bookService.page--;
   }
 
 }

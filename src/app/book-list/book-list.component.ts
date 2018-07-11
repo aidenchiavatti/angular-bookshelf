@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleBooksService } from '../shared/google-books.service';
 
 @Component({
   selector: 'app-book-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookService: GoogleBooksService) { }
 
   ngOnInit() {
   }

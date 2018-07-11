@@ -1,11 +1,13 @@
 <div class="container" id="book">
-    <div class="col-md-6 offset-md-3">
-        <h1>Heading</h1>
-        <div id="bookCover"><img src="assets/img/children_bookcover.png" width="200px"></div>
+    <div *ngIf="book" class="col-md-6 offset-md-3">
+        <h1>{{ book.title }}</h1>
+        <div id="bookCover">
+          <img [src]="book.thumbnail" width="200px">
+        </div>
         <div id="description">
           <dl>
             <dt>Description</dt>
-            <dd>This is the text description</dd>
+            <dd>{{ book.description }}</dd>
           </dl>
         </div>
     </div>

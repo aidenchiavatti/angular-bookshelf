@@ -1,4 +1,12 @@
 <div class="container d-flex justify-content-center" id="search">
-  <input type="text" placeholder="Enter search term" id="searchInput">
-  <button class="btn btn-primary" type="button" id="searchButton">Search</button>
+  <input type="text" placeholder="Enter search term" id="searchInput" [(ngModel)]="query">
+  <button class="btn btn-primary" type="button" id="searchButton" (click)="enterSearch()">Search</button>
 </div>
+
+<div class="text-center">
+  <p *ngIf="bookService.loading">Loading...</p>
+  <p *ngIf="bookService.initialized && !bookService.loading && bookService.books.length == 0">No results returned</p>
+  <p *ngIf="!bookService.initialized">Enter a search string above and hit search</p>
+</div>
+<app-book-list></app-book-list>
+<app-pager></app-pager>

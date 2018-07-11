@@ -31,6 +31,14 @@ export class LibraryService {
   }
 
   load() {
-    this.books = JSON.parse(localStorage.getItem('books'));
+    let savedBooks = JSON.parse(localStorage.getItem('books'));
+    if(!savedBooks) {
+      return;
+    }
+
+    this.books = [];
+    savedBooks.forEach(book => {
+      this.books.push(Object.assign(new Book(null, null, null, null, null, null, null, null, null, null), book))
+    });
   }
 }

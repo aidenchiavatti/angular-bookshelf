@@ -1,4 +1,4 @@
 <div class="container d-flex justify-content-center" id="paging">
-  <button class="btn btn-primary" type="button" id="prevButton">← Prev</button>
-  <button class="btn btn-primary" type="button" id="nextButton">Next&nbsp;→<br></button>
+  <button class="btn btn-primary" type="button" id="prevButton" (click)="prevPage()" *ngIf="bookService.page > 0">← Prev</button>
+  <button class="btn btn-primary" type="button" id="nextButton" (click)="nextPage()">Next&nbsp;→<br></button>
 </div>

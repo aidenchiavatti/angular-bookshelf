@@ -101,6 +101,7 @@
   
   .result {
     text-align:center;
+    margin-bottom: 20px;
   }
   
   .resultAuthor {
@@ -136,4 +137,10 @@
     margin-top:20px;
   }
   
+  .nav-link {
+    color: white;
+  }
+  .nav-link.active {
+    color: red !important;
+  }
   
